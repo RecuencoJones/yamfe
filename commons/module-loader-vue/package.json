@@ -1,0 +1,25 @@
+{
+  "name": "module-loader-vue",
+  "version": "0.0.0",
+  "scripts": {
+    "build": "vue-cli-service build --target lib --dest lib --name index ./src/index.js"
+  },
+  "main": "./lib/index.common.js",
+  "files": [
+    "lib"
+  ],
+  "dependencies": {
+    "core-js": "3.4.4",
+    "module-loader": "../module-loader/module-loader-0.0.0.tgz"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-optional-chaining": "7.8.3",
+    "@vue/cli-plugin-babel": "4.1.2",
+    "@vue/cli-service": "4.1.2",
+    "vue": "2.6.11",
+    "vue-template-compiler": "2.6.11"
+  },
+  "peerDependencies": {
+    "vue": "^2"
+  }
+}

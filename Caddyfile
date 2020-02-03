@@ -1,0 +1,39 @@
+(serve) {
+  try_files {path} /index.html
+  file_server
+}
+
+:8080 {
+  handle {
+    root orchestrator/www
+    import serve
+  }
+}
+
+:8081 {
+  handle {
+    root apps/navbar/www
+    import serve
+  }
+}
+
+:8082 {
+  handle {
+    root apps/landing/www
+    import serve
+  }
+}
+
+:8083 {
+  handle {
+    root apps/browse/www
+    import serve
+  }
+}
+
+:8084 {
+  handle {
+    root apps/product/www
+    import serve
+  }
+}
