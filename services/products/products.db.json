@@ -1,0 +1,28 @@
+[
+  {
+    "id": "WHSM1",
+    "imageUrl": "",
+    "name": "Space Marines Basic Squad",
+    "description": "The backbone of every Space Marines army",
+    "rrp": 30.0,
+    "category": "Warhammer",
+    "tags": [ "space marines" ]
+  },
+  {
+    "id": "WHIG1",
+    "imageUrl": "",
+    "name": "Imperial Guards Basic Squad",
+    "description": "A miriad of humans to use as meat walls",
+    "rrp": 30.0,
+    "category": "Warhammer",
+    "tags": [ "imperial guards" ]
+  },
+  {
+    "id": "3",
+    "imageUrl": "",
+    "name": "Soo Young",
+    "description": "Coming from the far east ready to pulverize whatever comes her way",
+    "rrp": 9.99,
+    "category": "Euphoria"
+  }
+]

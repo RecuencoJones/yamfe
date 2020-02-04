@@ -1,24 +1,25 @@
 import Vue from 'vue';
 import Product from './components/product.vue';
 
-let app;
-
-export function render({ mount, pushState }) {
+export function render({ mount, pushState, events }) {
   console.log('render product');
 
-  app = new Vue({
+  const app = new Vue({
     render: (h) => h(Product),
     data: {
       history: {
         pushState
-      }
+      },
+      events
     }
   }).$mount();
 
   mount.appendChild(app.$el);
-}
 
-export function remove() {
-  app.$destroy();
-  app.$el.remove();
+  return () => {
+    console.log('unmount product');
+
+    app.$destroy();
+    app.$el.remove();
+  };
 }

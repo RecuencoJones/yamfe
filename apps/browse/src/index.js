@@ -1,27 +1,15 @@
-export function render({ mount, pushState }) {
+import * as React from 'react';
+import * as ReactDOM from 'react-dom';
+import { Browse } from './containers/browse';
+
+export function render({ mount, pushState, events }) {
   console.log('render browse');
-  const main = document.createElement('main');
 
-  const text = document.createTextNode('This is product list page');
+  ReactDOM.render(<Browse pushState={ pushState } events={ events } />, mount);
 
-  const link = document.createElement('a');
+  return () => {
+    console.log('unmount browse');
 
-  link.href = '/browse/1';
-  link.text = 'Go to product';
-
-  link.addEventListener('click', (event) => {
-    event.preventDefault();
-    pushState(event.target.attributes.href.value);
-  });
-
-  main.appendChild(text);
-  main.appendChild(link);
-
-  mount.appendChild(main);
-}
-
-export function remove({ mount }) {
-  while (mount.firstChild) {
-    mount.firstChild.remove();
-  }
+    ReactDOM.unmountComponentAtNode(mount);
+  };
 }

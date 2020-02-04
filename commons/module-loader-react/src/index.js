@@ -1,10 +1,8 @@
 import * as React from 'react';
-import { useHistory } from 'react-router-dom';
 import { moduleLoader } from 'module-loader';
 
-export function ModuleLoader({ src, entry, as }) {
+export function ModuleLoader({ src, entry, as, onPushState, events }) {
   const ref = React.useRef();
-  const history = useHistory();
   const MountEl = as || 'div'
 
   React.useLayoutEffect(() => {
@@ -12,7 +10,8 @@ export function ModuleLoader({ src, entry, as }) {
       src,
       entry,
       mount: ref.current,
-      pushState: history.push
+      pushState: onPushState,
+      events
     })
 
     return () => {

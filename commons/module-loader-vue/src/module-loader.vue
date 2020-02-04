@@ -6,7 +6,7 @@
 import { moduleLoader } from 'module-loader';
 
 export default {
-  props: [ 'src', 'entry' ],
+  props: [ 'src', 'entry', 'events' ],
   data() {
     return { moduleUnloader: null };
   },
@@ -14,12 +14,12 @@ export default {
     this.moduleUnloader = moduleLoader({
       src: this.src,
       entry: this.entry,
+      events: this.events,
       mount: this.$refs.mount,
-      pushState: (href) => history.pushState({}, null, href)
+      pushState: (href) => this.$emit('pushState', href)
     });
   },
   beforeDestroy() {
-    console.log('destroy!');
     this.moduleUnloader?.();
   }
 }

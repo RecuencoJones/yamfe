@@ -1,23 +1,25 @@
 import Vue from 'vue';
 import Navbar from './components/navbar.vue';
 
-let app;
-
-export function render({ mount, pushState }) {
+export function render({ mount, pushState, events }) {
   console.log('render navbar');
 
-  app = new Vue({
+  const app = new Vue({
     render: (h) => h(Navbar),
     data: {
       history: {
         pushState
-      }
+      },
+      events
     }
   }).$mount();
 
   mount.appendChild(app.$el);
-}
 
-export function remove() {
-  app.$el.remove();
+  return () => {
+    console.log('unmount navbar');
+
+    app.$destroy();
+    app.$el.remove();
+  };
 }

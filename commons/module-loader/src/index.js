@@ -1,21 +1,21 @@
-export function moduleLoader({ src, entry, mount, pushState }) {
+export function moduleLoader({ src, entry, mount, pushState, events }) {
   const script = document.createElement('script');
+  let remove
 
   script.src = src;
 
-  script.addEventListener('load', () => {
-    window[entry]?.render?.({
+  script.addEventListener('load', async () => {
+    remove = await window[entry]?.render?.({
       mount,
-      pushState
+      pushState,
+      events
     });
   });
 
   document.body.appendChild(script);
 
   return () => {
-    window[entry]?.remove?.({
-      mount
-    });
+    remove?.();
 
     document.body.removeChild(script);
   };

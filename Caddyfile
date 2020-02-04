@@ -4,6 +4,17 @@
 }
 
 :8080 {
+  handle /_/* {
+    strip_prefix _
+    reverse_proxy localhost:5000
+  }
+
+  handle /assets/* {
+    root assets
+    strip_prefix assets
+    file_server
+  }
+
   handle {
     root orchestrator/www
     import serve
@@ -34,6 +45,13 @@
 :8084 {
   handle {
     root apps/product/www
+    import serve
+  }
+}
+
+:8085 {
+  handle {
+    root apps/basket/www
     import serve
   }
 }

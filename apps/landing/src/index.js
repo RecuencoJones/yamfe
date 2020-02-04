@@ -2,12 +2,14 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { Landing } from './containers/landing';
 
-export function render({ mount }) {
+export function render({ mount, pushState }) {
   console.log('render landing');
 
-  ReactDOM.render(<Landing />, mount);
-}
+  ReactDOM.render(<Landing pushState={ pushState } />, mount);
 
-export function remove({ mount }) {
-  ReactDOM.unmountComponentAtNode(mount);
+  return () => {
+    console.log('unmount landing');
+
+    ReactDOM.unmountComponentAtNode(mount);
+  };
 }

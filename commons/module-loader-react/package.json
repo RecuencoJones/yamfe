@@ -9,8 +9,7 @@
     "build": "babel src -d lib --delete-dir-on-start"
   },
   "peerDependencies": {
-    "react": "^16",
-    "react-router-dom": "^5"
+    "react": "^16"
   },
   "dependencies": {
     "module-loader": "../module-loader/module-loader-0.0.0.tgz"
@@ -20,7 +19,6 @@
     "@babel/core": "7.8.3",
     "@babel/preset-env": "7.8.3",
     "@babel/preset-react": "7.8.3",
-    "react": "16.12.0",
-    "react-router-dom": "5.1.2"
+    "react": "16.12.0"
   }
 }
