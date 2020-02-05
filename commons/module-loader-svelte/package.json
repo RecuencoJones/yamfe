@@ -12,6 +12,9 @@
     "build": "rollup -c",
     "prepack": "npm run build"
   },
+  "peerDependencies": {
+    "svelte": "^3"
+  },
   "dependencies": {
     "module-loader": "../module-loader/module-loader-0.0.0.tgz"
   },

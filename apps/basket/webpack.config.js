@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-  entry: './src/index.js',
+  entry: ['@babel/polyfill', './src/index.js'],
   output: {
     path: __dirname + '/www',
     filename: 'index.js',
@@ -17,15 +17,16 @@ module.exports = {
       },
       {
         test: /\.(html|svelte)$/,
-        exclude: /node_modules/,
         use: 'svelte-loader'
       }
     ]
   },
   resolve: {
+    mainFields: ['svelte', 'main'],
     alias: {
       svelte: path.resolve('node_modules', 'svelte')
-    }
+    },
+    extensions: ['.mjs', '.js', '.svelte']
   },
   devtool: 'source-map'
 }

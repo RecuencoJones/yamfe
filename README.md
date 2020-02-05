@@ -11,11 +11,11 @@ Inspired by [`single-spa`](https://single-spa.js.org/) module.
 
 There are 5 microfrontends served separately here:
 
+- [`landing (react)`](./apps/landing): Landing page
+- [`browse (react)`](./apps/browse): Browse products page
 - [`navbar (vue)`](./apps/navbar): Global header for all app
 - [`product (vue)`](./apps/product): Single product page (also loads nested `browse` page in the footer)
-- [`browse (react)`](./apps/browse): Browse products page
-- [`landing (react)`](./apps/landing): Landing page
-- [`basket (svelte)`](./apps/basket): Basket page
+- [`basket (svelte)`](./apps/basket): Basket page (also loads nested `browse` page in the footer)
 
 These microfrontends are loaded on demand by the parent [`orchestrator`](./orchestrator) application.
 

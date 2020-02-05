@@ -4,13 +4,15 @@ const products = require('../products.db.json');
 
 const app = express();
 
+const DELAY = process.env.PRODUCTS_DELAY || 250;
+
 app.get('/product', (req, res) => {
   const { category } = req.query;
   const filteredProducts = products.filter((_) => !category || _.category.toLowerCase() === category.toLowerCase());
 
   setTimeout(() => {
     res.json(filteredProducts);
-  }, 1000);
+  }, DELAY);
 });
 
 app.get('/product/:id', (req, res) => {
@@ -19,7 +21,7 @@ app.get('/product/:id', (req, res) => {
   if (product) {
     setTimeout(() => {
       res.json(product);
-    }, 1000);
+    }, DELAY);
   } else {
     res.sendStatus(404);
   }

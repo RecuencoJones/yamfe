@@ -1,5 +1,8 @@
 <script>
+  import ModuleLoader from 'module-loader-svelte';
+
   export let events;
+  export let history;
   let basket;
   let items;
 
@@ -60,26 +63,36 @@
     return total.toFixed(2);
   }
 
+  function handlePushState(href) {
+    history.pushState(href);
+  }
+
   function handleInc(id) {
     console.log('add to cart', id);
     events.emit('cart:add', id);
-
-    basket = loadBasket();
   }
 
   function handleDec(id) {
     console.log('remove from cart', id);
     events.emit('cart:remove', id);
-
-    basket = loadBasket();
   }
 
   function handleEmpty() {
     console.log('empty cart');
     events.emit('cart:empty');
-
-    basket = loadBasket();
   }
+
+  events.on('cart:add', () => {
+    basket = loadBasket();
+  });
+
+  events.on('cart:remove', () => {
+    basket = loadBasket();
+  });
+
+  events.on('cart:empty', () => {
+    basket = loadBasket();
+  });
 
   basket = loadBasket();
 
@@ -95,7 +108,7 @@
   {#if basket.items.length && items}
     <ul class="list-group">
       {#each Object.entries(items) as [ itemID, item ]}
-        <li class="list-group-item d-flex justify-content-between align-items-center">
+        <li class="list-group-item d-flex flex-wrap justify-content-between align-items-center">
           <span>
             <span class="text-muted">{itemID}</span>
             <span>{item.name}</span>
@@ -130,4 +143,7 @@
       Proceed to checkout
     </button>
   </div>
+  <footer class="navbar fixed-bottom navbar-expand-lg d-none d-md-block" style="transform: scale(.75);">
+    <ModuleLoader src="http://localhost:8083/index.js" entry="browse" events={events} on:pushState={handlePushState}/>
+  </footer>
 </main>

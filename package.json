@@ -5,8 +5,8 @@
     "serve:back": "lerna run --scope 'service-products' start",
     "build": "npm run build:commons && npm run build:apps && npm run build:orch && npm run build:services",
     "build:commons": "npm run build:module-loader && npm run build:module-loader-adapters",
-    "build:module-loader": "lerna bootstrap --scope 'module-loader' && lerna run --scope 'module-loader' pack",
-    "build:module-loader-adapters": "lerna bootstrap --scope 'module-loader-*' && lerna run --scope 'module-loader-*' pack",
+    "build:module-loader": "lerna bootstrap --scope 'module-loader' && lerna exec --scope 'module-loader' -- npm pack",
+    "build:module-loader-adapters": "lerna bootstrap --scope 'module-loader-*' && lerna exec --scope 'module-loader-*' -- npm pack",
     "build:apps": "lerna bootstrap --scope 'app-*' && lerna run --scope 'app-*' build",
     "build:orch": "lerna bootstrap --scope 'orchestrator' && lerna run --scope 'orchestrator' build",
     "build:services": "lerna bootstrap --scope 'service-*'"

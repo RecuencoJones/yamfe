@@ -4,6 +4,7 @@
 }
 
 :8080 {
+  # proxy products service
   handle /_/* {
     strip_prefix _
     reverse_proxy localhost:5000

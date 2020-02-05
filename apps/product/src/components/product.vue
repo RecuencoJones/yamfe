@@ -23,7 +23,7 @@
     <div v-else>
       Loading...
     </div>
-    <footer class="navbar fixed-bottom navbar-expand-lg" style="transform: scale(.75);">
+    <footer class="navbar fixed-bottom navbar-expand-lg d-none d-md-block" style="transform: scale(.75);">
       <module-loader src="http://localhost:8083/index.js" entry="browse" :events="$root.events" @pushState="handlePushState" />
     </footer>
   </main>

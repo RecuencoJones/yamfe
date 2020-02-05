@@ -6,21 +6,29 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a class="nav-link" href="/" @click="handleClick">Home</a>
+          <a class="nav-link" href="/" @click="handleClick" data-toggle="collapse" data-target=".navbar-collapse.show">
+            Home
+          </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/browse?category=warhammer" @click="handleClick">Warhammer</a>
+          <a class="nav-link" href="/browse?category=warhammer" @click="handleClick" data-toggle="collapse" data-target=".navbar-collapse.show">
+            Warhammer
+          </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/browse?category=euphoria" @click="handleClick">Euphoria</a>
+          <a class="nav-link" href="/browse?category=euphoria" @click="handleClick" data-toggle="collapse" data-target=".navbar-collapse.show">
+            Euphoria
+          </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/browse" @click="handleClick">Browse all products</a>
+          <a class="nav-link" href="/browse" @click="handleClick" data-toggle="collapse" data-target=".navbar-collapse.show">
+            Browse all products
+          </a>
         </li>
       </ul>
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="/basket" @click="handleClick">
+          <a class="nav-link" href="/basket" @click="handleClick" data-toggle="collapse" data-target=".navbar-collapse.show">
             <span class="oi oi-basket"/>
             <span>{{ basketItems }}</span>
           </a>
@@ -92,5 +100,5 @@ export default {
       this.loadBasket();
     });
   }
-}
+};
 </script>
