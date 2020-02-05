@@ -1,0 +1,24 @@
+{
+  "name": "module-loader-svelte",
+  "version": "0.0.0",
+  "svelte": "./src/index.js",
+  "module": "./lib/index.mjs",
+  "main": "./lib/index.js",
+  "files": [
+    "src",
+    "lib"
+  ],
+  "scripts": {
+    "build": "rollup -c",
+    "prepack": "npm run build"
+  },
+  "dependencies": {
+    "module-loader": "../module-loader/module-loader-0.0.0.tgz"
+  },
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "7.1.1",
+    "rollup": "1.31.0",
+    "rollup-plugin-svelte": "5.1.1",
+    "svelte": "3.18.1"
+  }
+}

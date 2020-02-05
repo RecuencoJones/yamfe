@@ -19,10 +19,11 @@ There are 5 microfrontends served separately here:
 
 These microfrontends are loaded on demand by the parent [`orchestrator`](./orchestrator) application.
 
-A common library for loading microfrontend was extracted and created bindings for both `react` and `vue`:
+A common library for loading microfrontend was extracted and created bindings for `react`, `svelte` and `vue`:
 
 - [`commons/module-loader`](./commons/module-loader)
 - [`commons/module-loader-react`](./commons/module-loader-react)
+- [`commons/module-loader-svelte`](./commons/module-loader-svelte)
 - [`commons/module-loader-vue`](./commons/module-loader-vue)
 
 ## Building
