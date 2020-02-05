@@ -75,6 +75,22 @@ export default {
       this.basket.items.push(id);
       this.persistBasket();
     });
+
+    this.$root.events.on('cart:remove', (id) => {
+      const index = this.basket.items.findIndex((item) => item === id);
+
+      this.basket.items.splice(index, 1);
+
+      this.persistBasket();
+      this.loadBasket();
+    });
+
+    this.$root.events.on('cart:empty', (id) => {
+      this.basket = createEmptyBasket();
+
+      this.persistBasket();
+      this.loadBasket();
+    });
   }
 }
 </script>

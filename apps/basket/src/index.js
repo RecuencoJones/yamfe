@@ -1,10 +1,13 @@
 import App from './App.svelte';
 
-export function render({ mount }) {
+export function render({ mount, events }) {
   console.log('render basket');
 
   const app = new App({
-    target: mount
+    target: mount,
+    props: {
+      events
+    }
   });
 
   return () => {
