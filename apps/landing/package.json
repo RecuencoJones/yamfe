@@ -1,4 +1,6 @@
 {
+  "name": "app-landing",
+  "private": true,
   "scripts": {
     "start": "webpack-dev-server --hot",
     "build": "webpack"

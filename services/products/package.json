@@ -1,4 +1,5 @@
 {
+  "name": "service-products",
   "scripts": {
     "start": "node src/index.js"
   },

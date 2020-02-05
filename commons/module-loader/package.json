@@ -6,7 +6,8 @@
     "lib"
   ],
   "scripts": {
-    "build": "babel src -d lib --delete-dir-on-start"
+    "build": "babel src -d lib --delete-dir-on-start",
+    "prepack": "npm run build"
   },
   "devDependencies": {
     "@babel/cli": "7.8.3",

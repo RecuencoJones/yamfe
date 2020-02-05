@@ -2,7 +2,8 @@
   "name": "module-loader-vue",
   "version": "0.0.0",
   "scripts": {
-    "build": "vue-cli-service build --target lib --dest lib --name index ./src/index.js"
+    "build": "vue-cli-service build --target lib --dest lib --name index ./src/index.js",
+    "prepack": "npm run build"
   },
   "main": "./lib/index.common.js",
   "files": [

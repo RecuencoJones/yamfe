@@ -1,0 +1,9 @@
+{
+  "packages": [
+    "apps/*",
+    "commons/*",
+    "services/*",
+    "orchestrator"
+  ],
+  "version": "0.0.0"
+}

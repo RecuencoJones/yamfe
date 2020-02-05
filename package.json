@@ -1,0 +1,20 @@
+{
+  "scripts": {
+    "start": "npm run build && npm run serve:front",
+    "serve:front": "caddy stop; caddy run",
+    "serve:back": "lerna run --scope 'service-products' start",
+    "build": "npm run build:commons && npm run build:apps && npm run build:orch && npm run build:services",
+    "build:commons": "npm run build:module-loader && npm run build:module-loader-adapters",
+    "build:module-loader": "lerna bootstrap --scope 'module-loader' && lerna run --scope 'module-loader' pack",
+    "build:module-loader-adapters": "lerna bootstrap --scope 'module-loader-*' && lerna run --scope 'module-loader-*' pack",
+    "build:apps": "lerna bootstrap --scope 'app-*' && lerna run --scope 'app-*' build",
+    "build:orch": "lerna bootstrap --scope 'orchestrator' && lerna run --scope 'orchestrator' build",
+    "build:services": "lerna bootstrap --scope 'service-*'"
+  },
+  "devDependencies": {
+    "caddy-npm": "github:RecuencoJones/caddy-npm",
+    "concurrently": "5.1.0",
+    "lerna": "3.20.2",
+    "rimraf": "3.0.1"
+  }
+}

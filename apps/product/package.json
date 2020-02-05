@@ -1,4 +1,6 @@
 {
+  "name": "app-product",
+  "private": true,
   "scripts": {
     "start": "webpack-dev-server --hot",
     "build": "webpack"
