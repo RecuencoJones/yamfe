@@ -1,0 +1,208 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: api-products
+spec:
+  selector:
+    matchLabels:
+      app: api-products
+  template:
+    metadata:
+      labels:
+        app: api-products
+    spec:
+      containers:
+        - name: api-products
+          image: recuencojones/yamfe-api-products:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 5000
+          resources:
+            requests:
+              cpu: 1m
+              memory: 16Mi
+            limits:
+              cpu: 10m
+              memory: 25Mi
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: app-basket
+spec:
+  selector:
+    matchLabels:
+      app: app-basket
+  template:
+    metadata:
+      labels:
+        app: app-basket
+    spec:
+      containers:
+        - name: app-basket
+          image: recuencojones/yamfe-app-basket:latest
+          ports:
+            - containerPort: 2015
+          resources:
+            requests:
+              cpu: 1m
+              memory: 16Mi
+            limits:
+              cpu: 10m
+              memory: 25Mi
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: app-browse
+spec:
+  selector:
+    matchLabels:
+      app: app-browse
+  template:
+    metadata:
+      labels:
+        app: app-browse
+    spec:
+      containers:
+        - name: app-browse
+          image: recuencojones/yamfe-app-browse:latest
+          ports:
+            - containerPort: 2015
+          resources:
+            requests:
+              cpu: 1m
+              memory: 16Mi
+            limits:
+              cpu: 10m
+              memory: 25Mi
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: app-footer
+spec:
+  selector:
+    matchLabels:
+      app: app-footer
+  template:
+    metadata:
+      labels:
+        app: app-footer
+    spec:
+      containers:
+        - name: app-footer
+          image: recuencojones/yamfe-app-footer:latest
+          ports:
+            - containerPort: 2015
+          resources:
+            requests:
+              cpu: 1m
+              memory: 16Mi
+            limits:
+              cpu: 10m
+              memory: 25Mi
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: app-landing
+spec:
+  selector:
+    matchLabels:
+      app: app-landing
+  template:
+    metadata:
+      labels:
+        app: app-landing
+    spec:
+      containers:
+        - name: app-landing
+          image: recuencojones/yamfe-app-landing:latest
+          ports:
+            - containerPort: 2015
+          resources:
+            requests:
+              cpu: 1m
+              memory: 16Mi
+            limits:
+              cpu: 10m
+              memory: 25Mi
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: app-navbar
+spec:
+  selector:
+    matchLabels:
+      app: app-navbar
+  template:
+    metadata:
+      labels:
+        app: app-navbar
+    spec:
+      containers:
+        - name: app-navbar
+          image: recuencojones/yamfe-app-navbar:latest
+          ports:
+            - containerPort: 2015
+          resources:
+            requests:
+              cpu: 1m
+              memory: 16Mi
+            limits:
+              cpu: 10m
+              memory: 25Mi
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: app-product
+spec:
+  selector:
+    matchLabels:
+      app: app-product
+  template:
+    metadata:
+      labels:
+        app: app-product
+    spec:
+      containers:
+        - name: app-product
+          image: recuencojones/yamfe-app-product:latest
+          ports:
+            - containerPort: 2015
+          resources:
+            requests:
+              cpu: 1m
+              memory: 16Mi
+            limits:
+              cpu: 10m
+              memory: 25Mi
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: orchestrator
+spec:
+  selector:
+    matchLabels:
+      app: orchestrator
+  template:
+    metadata:
+      labels:
+        app: orchestrator
+    spec:
+      containers:
+        - name: orchestrator
+          image: recuencojones/yamfe-orchestrator:latest
+          ports:
+            - containerPort: 2015
+          resources:
+            requests:
+              cpu: 1m
+              memory: 16Mi
+            limits:
+              cpu: 10m
+              memory: 25Mi

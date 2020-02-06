@@ -1,0 +1,103 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: api-products-5000
+spec:
+  selector:
+    app: api-products
+  ports:
+    - name: api-products-5000
+      port: 5000
+      targetPort: 5000
+  type: ClusterIP
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: app-basket-2015
+spec:
+  selector:
+    app: app-basket
+  ports:
+    - name: app-basket-2015
+      port: 2015
+      targetPort: 2015
+  type: ClusterIP
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: app-browse-2015
+spec:
+  selector:
+    app: app-browse
+  ports:
+    - name: app-browse-2015
+      port: 2015
+      targetPort: 2015
+  type: ClusterIP
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: app-footer-2015
+spec:
+  selector:
+    app: app-footer
+  ports:
+    - name: app-footer-2015
+      port: 2015
+      targetPort: 2015
+  type: ClusterIP
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: app-landing-2015
+spec:
+  selector:
+    app: app-landing
+  ports:
+    - name: app-landing-2015
+      port: 2015
+      targetPort: 2015
+  type: ClusterIP
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: app-navbar-2015
+spec:
+  selector:
+    app: app-navbar
+  ports:
+    - name: app-navbar-2015
+      port: 2015
+      targetPort: 2015
+  type: ClusterIP
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: app-product-2015
+spec:
+  selector:
+    app: app-product
+  ports:
+    - name: app-product-2015
+      port: 2015
+      targetPort: 2015
+  type: ClusterIP
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: orchestrator-2015
+spec:
+  selector:
+    app: orchestrator
+  ports:
+    - name: orchestrator-2015
+      port: 2015
+      targetPort: 2015
+  type: ClusterIP

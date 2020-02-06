@@ -1,0 +1,49 @@
+:2015 {
+  # proxy products service
+  handle /_/* {
+    strip_prefix _
+    reverse_proxy {$API_PRODUCTS_HOST}:{$API_PRODUCTS_PORT}
+  }
+
+  handle /ui/navbar/* {
+    strip_prefix ui/navbar
+    reverse_proxy {$UI_NAVBAR_HOST}:{$UI_NAVBAR_PORT}
+  }
+
+  handle /ui/landing/* {
+    strip_prefix ui/landing
+    reverse_proxy {$UI_LANDING_HOST}:{$UI_LANDING_PORT}
+  }
+
+  handle /ui/browse/* {
+    strip_prefix ui/browse
+    reverse_proxy {$UI_BROWSE_HOST}:{$UI_BROWSE_PORT}
+  }
+
+  handle /ui/product/* {
+    strip_prefix ui/product
+    reverse_proxy {$UI_PRODUCT_HOST}:{$UI_PRODUCT_PORT}
+  }
+
+  handle /ui/basket/* {
+    strip_prefix ui/basket
+    reverse_proxy {$UI_BASKET_HOST}:{$UI_BASKET_PORT}
+  }
+
+  handle /ui/footer/* {
+    strip_prefix ui/footer
+    reverse_proxy {$UI_FOOTER_HOST}:{$UI_FOOTER_PORT}
+  }
+
+  handle /assets/* {
+    root assets
+    strip_prefix assets
+    file_server
+  }
+
+  handle {
+    root www
+    try_files {path} /index.html
+    file_server
+  }
+}

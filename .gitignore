@@ -2,3 +2,4 @@ www
 lib
 node_modules
 *.tgz
+kubeconfig

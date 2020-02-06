@@ -1,0 +1,18 @@
+kind: Ingress
+apiVersion: networking.k8s.io/v1beta1
+metadata:
+  labels:
+    app: orchestrator
+  name: orchestrator
+spec:
+  tls:
+  - hosts:
+    - yamfe.recuencojones.usw1.kubesail.io
+    secretName: orchestrator-ingress
+  rules:
+  - host: yamfe.recuencojones.usw1.kubesail.io
+    http:
+      paths:
+      - backend:
+          serviceName: orchestrator-2015
+          servicePort: 2015

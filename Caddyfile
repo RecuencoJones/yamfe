@@ -41,7 +41,7 @@
   }
 
   handle /assets/* {
-    root assets
+    root orchestrator/assets
     strip_prefix assets
     file_server
   }
