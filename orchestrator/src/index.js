@@ -23,6 +23,7 @@ function App() {
         <Route path="/browse" render={ () => <ModuleLoader { ...modules.browse } onPushState={ handlePushState } events={ events } />  } key={ search } />
         <Route path="/basket" render={ () => <ModuleLoader { ...modules.basket } onPushState={ handlePushState } events={ events } />  } />
       </Switch>
+      <ModuleLoader { ...modules.footer } as="footer" onPushState={ handlePushState } events={ events } />
     </>
   );
 }

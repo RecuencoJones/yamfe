@@ -14,8 +14,9 @@ There are 5 microfrontends served separately here:
 - [`landing (react)`](./apps/landing): Landing page
 - [`browse (react)`](./apps/browse): Browse products page
 - [`navbar (vue)`](./apps/navbar): Global header for all app
-- [`product (vue)`](./apps/product): Single product page (also loads nested `browse` page in the footer)
-- [`basket (svelte)`](./apps/basket): Basket page (also loads nested `browse` page in the footer)
+- [`product (vue)`](./apps/product): Single product page (also loads nested `browse` page)
+- [`basket (svelte)`](./apps/basket): Basket page (also loads nested `browse` page)
+- [`footer (svelte)`](./apps/footer): Global footer for all app
 
 These microfrontends are loaded on demand by the parent [`orchestrator`](./orchestrator) application.
 

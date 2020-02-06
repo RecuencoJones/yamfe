@@ -63,7 +63,7 @@
     return total.toFixed(2);
   }
 
-  function handlePushState(href) {
+  function handlePushState({ detail: href }) {
     history.pushState(href);
   }
 
@@ -104,7 +104,7 @@
     .then((_) => { items = _; });
 </script>
 
-<main class="container mt-4">
+<main class="container pt-4">
   {#if basket.items.length && items}
     <ul class="list-group">
       {#each Object.entries(items) as [ itemID, item ]}
@@ -143,7 +143,7 @@
       Proceed to checkout
     </button>
   </div>
-  <footer class="navbar fixed-bottom navbar-expand-lg d-none d-md-block" style="transform: scale(.75);">
-    <ModuleLoader src="http://localhost:8083/index.js" entry="browse" events={events} on:pushState={handlePushState}/>
+  <footer style="transform: scale(.75);">
+    <ModuleLoader src="/ui/browse/index.js" entry="browse" events={events} on:pushState={handlePushState}/>
   </footer>
 </main>

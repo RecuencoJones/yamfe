@@ -10,6 +10,36 @@
     reverse_proxy localhost:5000
   }
 
+  handle /ui/navbar/* {
+    strip_prefix ui/navbar
+    reverse_proxy localhost:8081
+  }
+
+  handle /ui/landing/* {
+    strip_prefix ui/landing
+    reverse_proxy localhost:8082
+  }
+
+  handle /ui/browse/* {
+    strip_prefix ui/browse
+    reverse_proxy localhost:8083
+  }
+
+  handle /ui/product/* {
+    strip_prefix ui/product
+    reverse_proxy localhost:8084
+  }
+
+  handle /ui/basket/* {
+    strip_prefix ui/basket
+    reverse_proxy localhost:8085
+  }
+
+  handle /ui/footer/* {
+    strip_prefix ui/footer
+    reverse_proxy localhost:8086
+  }
+
   handle /assets/* {
     root assets
     strip_prefix assets
@@ -53,6 +83,13 @@
 :8085 {
   handle {
     root apps/basket/www
+    import serve
+  }
+}
+
+:8086 {
+  handle {
+    root apps/footer/www
     import serve
   }
 }

@@ -29,7 +29,7 @@ export function Browse({ pushState, events }) {
   };
 
   return (
-    <main className="container mt-4">
+    <main className="container pt-4">
       <div className="card-deck">
         { !products && 'Loading...' }
         { products && products.map((product) => (

@@ -1,5 +1,5 @@
 <template>
-  <main class="container mt-4">
+  <main class="container pt-4">
     <div v-if="product">
       <h4>{{ product.name }}</h4>
       <div style="display: flex; place-content: space-between; flex-wrap: wrap">
@@ -23,8 +23,8 @@
     <div v-else>
       Loading...
     </div>
-    <footer class="navbar fixed-bottom navbar-expand-lg d-none d-md-block" style="transform: scale(.75);">
-      <module-loader src="http://localhost:8083/index.js" entry="browse" :events="$root.events" @pushState="handlePushState" />
+    <footer style="transform: scale(.75);">
+      <module-loader src="/ui/browse/index.js" entry="browse" :events="$root.events" @pushState="handlePushState" />
     </footer>
   </main>
 </template>
