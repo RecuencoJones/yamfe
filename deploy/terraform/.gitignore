@@ -1,0 +1,6 @@
+.terraform
+*.backup
+*.bck
+*.lock.infp
+*.tfplan
+tfplan
